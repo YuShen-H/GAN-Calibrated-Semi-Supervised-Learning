@@ -1,0 +1,18 @@
+Weights & Biases integration enabled.
+Using device: cuda
+Generator type: simple
+Using hybrid loss: True
+Using GIoU: True
+Training samples: 3507, Validation samples: 389
+Generator parameters: 4,833,412
+Discriminator parameters: 2,767,808
+Starting enhanced training...
+Warning: Could not save sample image: permute(sparse_coo): number of dimensions in the tensor input does not match the length of the desired ordering of dimensions i.e. input.dim() = 4 is not equal to len(dims) = 3
+[Epoch 1/100] G: 2.138 D: 0.610 IoU: 0.399 L1: 0.027 GAN: 1.338 ΔIoU: 0.0032 Before: 0.6118 After: 0.6150
+New best model saved! Delta IoU = 0.0032
+Traceback (most recent call last):
+  File "c:\Users\johnn\Desktop\Program\code\GAN-Calibrated-Semi-Supervised-Learning-main\cgan\cgan_train_wandb.py", line 370, in <module>
+    main()
+  File "c:\Users\johnn\Desktop\Program\code\GAN-Calibrated-Semi-Supervised-Learning-main\cgan\cgan_train_wandb.py", line 269, in main
+    epoch_stats['train/loss_G'] += loss_G.item()
+KeyboardInterrupt

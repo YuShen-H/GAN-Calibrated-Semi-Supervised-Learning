@@ -1,0 +1,40 @@
+{
+  "os": "Windows-10-10.0.26100-SP0",
+  "python": "CPython 3.10.18",
+  "startedAt": "2025-07-16T06:51:50.599623Z",
+  "program": "c:\\Users\\johnn\\Desktop\\Program\\code\\GAN-Calibrated-Semi-Supervised-Learning-main\\cgan\\cgan_train_wandb.py",
+  "codePath": "cgan\\cgan_train_wandb.py",
+  "codePathLocal": "cgan\\cgan_train_wandb.py",
+  "git": {
+    "remote": "https://github.com/YuShen-H/CGAN.git",
+    "commit": "48b7b381e21903c8f631debe6e6e05f9df588f28"
+  },
+  "email": "yushencam08@gmail.com",
+  "root": "C:\\Users\\johnn\\Desktop\\Program\\code\\GAN-Calibrated-Semi-Supervised-Learning-main",
+  "host": "這是台筆電",
+  "executable": "C:\\Users\\johnn\\anaconda3\\envs\\cgan_env\\python.exe",
+  "cpu_count": 8,
+  "cpu_count_logical": 16,
+  "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "486925471744",
+      "used": "432329367552"
+    }
+  },
+  "memory": {
+    "total": "16841400320"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+      "memoryTotal": "4294967296",
+      "cudaCores": 2560,
+      "architecture": "Ampere",
+      "uuid": "GPU-6cb03324-052e-b1ab-f5d0-94796c846278"
+    }
+  ],
+  "cudaVersion": "12.5",
+  "writerId": "u43r348ckgjbtbvpm4uyqndaeei7pfo8"
+}

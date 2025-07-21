@@ -16,9 +16,9 @@ KFOLD 交叉偽標籤產生腳本
 """
 
 # ────────────── 參數區 ──────────────
-YAML_PATH          = r"C:\Users\alian\PycharmProjects\yolov8\yaml\person.yaml"  # 原始資料 yaml
-PRETRAINED_WEIGHTS = r"C:\Users\alian\PycharmProjects\yolov8\models\yolov8s.pt" # 起始權重
-OUTPUT_ROOT        = r"C:\Users\alian\PycharmProjects\yolov8\datasets\500_100_100\kfold" # 輸出根目錄
+YAML_PATH          = "yaml/person.yaml"  # 原始資料 yaml
+PRETRAINED_WEIGHTS = "models/yolov8s.pt" # 起始權重
+OUTPUT_ROOT        = "datasets/500_100_100/kfold" # 輸出根目錄
 
 KFOLDS             = 5      # 折數
 EPOCHS             = 400    # 訓練輪數

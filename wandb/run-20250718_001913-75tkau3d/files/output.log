@@ -1,0 +1,22 @@
+Weights & Biases integration enabled.
+Using device: cuda
+Generator type: unet
+Using hybrid loss: True
+Using GIoU: True
+Training samples: 3507, Validation samples: 389
+Using Vision Transformer (ViT) models.
+Generator parameters: 4,985,732
+Discriminator parameters: 5,939,457
+Starting enhanced training...
+Traceback (most recent call last):
+  File "c:\Users\johnn\Desktop\Program\code\GAN-Calibrated-Semi-Supervised-Learning-main\cgan\cgan_train_wandb.py", line 399, in <module>
+    main()
+  File "c:\Users\johnn\Desktop\Program\code\GAN-Calibrated-Semi-Supervised-Learning-main\cgan\cgan_train_wandb.py", line 288, in main
+    loss_G.backward()
+  File "C:\Users\johnn\anaconda3\envs\cgan_env\lib\site-packages\torch\_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "C:\Users\johnn\anaconda3\envs\cgan_env\lib\site-packages\torch\autograd\__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "C:\Users\johnn\anaconda3\envs\cgan_env\lib\site-packages\torch\autograd\graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+KeyboardInterrupt
