@@ -1,3 +1,5 @@
 datasets/
 runs/
+wandb/
+__pycache__/
 

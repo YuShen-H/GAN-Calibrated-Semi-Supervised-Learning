@@ -21,7 +21,7 @@ import wandb  # [W&B 新增] 匯入 wandb 函式庫
 # Setup path
 project_root = Path(__file__).parent
 
-from models import GeneratorUNet, GeneratorSimpleRegressor, Discriminator, weights_init_normal
+from legacy_models import GeneratorUNet, GeneratorSimpleRegressor, Discriminator, weights_init_normal
 from dataset import CalibratorDataset
 from losses import HybridLoss, apply_delta_to_bbox, iou_metric
 
@@ -181,7 +181,7 @@ def main():
     else: # 使用原始的 CNN/U-Net 模型
         print("Using CNN / U-Net models.")
         netG = get_generator(config['generator_type'], config['delta_scale']).to(device)
-        #netD = DiscriminatorCNN(spectral_norm=config['spectral_norm']).to(device)
+        netD = Discriminator(spectral_norm=config['spectral_norm']).to(device)
         netG.apply(weights_init_normal)
         netD.apply(weights_init_normal)
 
@@ -269,9 +269,15 @@ def main():
             gt_boxes = apply_delta_to_bbox(pred_box, delta_true)
             
             if args.use_hybrid_loss:
-                loss_G_reg, loss_iou, loss_l1 = criterion_hybrid(
+                result = criterion_hybrid(
                     delta_pred, delta_true, calibrated_boxes, gt_boxes
                 )
+                if len(result) == 4:
+                    loss_G_reg, loss_iou, loss_l1, loss_focal = result
+                    epoch_stats['train/loss_focal'] = epoch_stats.get('train/loss_focal', 0) + loss_focal.item()
+                else:
+                    loss_G_reg, loss_iou, loss_l1 = result
+                
                 epoch_stats['train/loss_iou'] += loss_iou.item()
                 epoch_stats['train/loss_l1'] += loss_l1.item()
             else:

@@ -1,0 +1,110 @@
+_wandb:
+    value:
+        cli_version: 0.21.0
+        e:
+            wtfjh0w5sec2rdmohtpbm8hctxq2bmd8:
+                codePath: cgan\cgan_train_wandb.py
+                codePathLocal: cgan\cgan_train_wandb.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "12.5"
+                disk:
+                    /:
+                        total: "486925471744"
+                        used: "433838628864"
+                email: yushencam08@gmail.com
+                executable: C:\Users\johnn\anaconda3\envs\cgan_env\python.exe
+                git:
+                    commit: 12bfe4e75f058629ad0afdc4c8ed7cac110b41c8
+                    remote: https://github.com/YuShen-H/CGAN.git
+                gpu: NVIDIA GeForce RTX 3050 Ti Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 2560
+                      memoryTotal: "4294967296"
+                      name: NVIDIA GeForce RTX 3050 Ti Laptop GPU
+                      uuid: GPU-6cb03324-052e-b1ab-f5d0-94796c846278
+                host: 這是台筆電
+                memory:
+                    total: "16841400320"
+                os: Windows-10-10.0.26100-SP0
+                program: c:\Users\johnn\Desktop\Program\code\GAN-Calibrated-Semi-Supervised-Learning-main\cgan\cgan_train_wandb.py
+                python: CPython 3.10.18
+                root: C:\Users\johnn\Desktop\Program\code\GAN-Calibrated-Semi-Supervised-Learning-main
+                startedAt: "2025-07-21T16:49:40.910454Z"
+                writerId: wtfjh0w5sec2rdmohtpbm8hctxq2bmd8
+        m: []
+        python_version: 3.10.18
+        t:
+            "1":
+                - 1
+                - 41
+            "2":
+                - 1
+                - 41
+            "3":
+                - 16
+            "4": 3.10.18
+            "5": 0.21.0
+            "8":
+                - 3
+            "12": 0.21.0
+            "13": windows-amd64
+amp:
+    value: true
+batch_size:
+    value: 128
+beta1:
+    value: 0.5
+beta2:
+    value: 0.999
+d_train_ratio:
+    value: 1
+data_dir:
+    value: datasets/500_100_100/cgan
+delta_scale:
+    value: 0.3
+early_stop:
+    value:
+        min_delta: 2e-05
+        patience: 15
+generator_type:
+    value: hfunet
+img_size:
+    value: 128
+iou_threshold:
+    value: 0.25
+lambda_iou:
+    value: 3
+lambda_l1:
+    value: 0.02
+lr:
+    value: 0.0001
+n_epochs:
+    value: 100
+save_dir:
+    value: runs/exp
+seed:
+    value: 42
+spectral_norm:
+    value: true
+train_split:
+    value: 0.9
+use_giou:
+    value: true
+use_hybrid_loss:
+    value: true
+val_split:
+    value: 0.1
+wandb:
+    value:
+        enabled: true
+        entity: null
+        name: null
+        notes: CGAN training for pseudo-label calibration
+        project: cgan-calibration
+        tags:
+            - cgan
+            - pseudo-label
+            - calibration

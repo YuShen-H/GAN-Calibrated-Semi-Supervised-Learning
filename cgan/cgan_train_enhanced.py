@@ -19,15 +19,23 @@ import wandb
 # Setup path
 project_root = Path(__file__).parent
 
-from models import GeneratorUNet, GeneratorSimpleRegressor, Discriminator, weights_init_normal
+from legacy_models import GeneratorUNet, GeneratorSimpleRegressor, Discriminator, weights_init_normal
+from legacy_models import GeneratorUNet, GeneratorSimpleRegressor, Discriminator, weights_init_normal
+from models import HFUNet_Regressor
 from dataset import CalibratorDataset
 from losses import HybridLoss, apply_delta_to_bbox, iou_metric
 
-def get_generator(generator_type, delta_scale):
+def get_generator(generator_type, delta_scale, config=None):
     """根據配置選擇生成器類型"""
     if generator_type == "simple":
         return GeneratorSimpleRegressor(delta_scale=delta_scale)
-    else:
+    elif generator_type == "hfunet":
+        print("Initializing HFUNet_Regressor...")
+        return HFUNet_Regressor(
+            input_channels=3, 
+            delta_scale=delta_scale
+        )
+    else: # Default to unet
         return GeneratorUNet(delta_scale=delta_scale)
 
 def get_refined_patch_batch(original_image_paths, pred_bboxes, deltas_pred, img_size, device, fallback_patches=None):
@@ -187,7 +195,7 @@ def main():
     print(f"Training samples: {len(train_set)}, Validation samples: {len(val_set)}")
 
     # Initialize models
-    netG = get_generator(args.generator_type, args.delta_scale).to(device)
+    netG = get_generator(args.generator_type, args.delta_scale, config=config).to(device)
     netD = Discriminator(spectral_norm=args.spectral_norm).to(device)
     netG.apply(weights_init_normal)
     netD.apply(weights_init_normal)

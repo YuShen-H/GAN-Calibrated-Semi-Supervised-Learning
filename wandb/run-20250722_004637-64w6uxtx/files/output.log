@@ -1,0 +1,15 @@
+Weights & Biases integration enabled.
+Using device: cuda
+Generator type: hfunet
+Using hybrid loss: True
+Using GIoU: True
+Traceback (most recent call last):
+  File "c:\Users\johnn\Desktop\Program\code\GAN-Calibrated-Semi-Supervised-Learning-main\cgan\cgan_train_wandb.py", line 399, in <module>
+    main()
+  File "c:\Users\johnn\Desktop\Program\code\GAN-Calibrated-Semi-Supervised-Learning-main\cgan\cgan_train_wandb.py", line 156, in main
+    train_loader = DataLoader(train_set, batch_size=args.batch_size, shuffle=True, num_workers=2, pin_memory=True)
+  File "C:\Users\johnn\anaconda3\envs\cgan_env\lib\site-packages\torch\utils\data\dataloader.py", line 376, in __init__
+    sampler = RandomSampler(dataset, generator=generator)  # type: ignore[arg-type]
+  File "C:\Users\johnn\anaconda3\envs\cgan_env\lib\site-packages\torch\utils\data\sampler.py", line 164, in __init__
+    raise ValueError(
+ValueError: num_samples should be a positive integer value, but got num_samples=0
